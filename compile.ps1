@@ -5,7 +5,7 @@
 #
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory = $true)][string]$file,
+    [string]$f,
     [string]$s = "main.tex",
     [string]$p = "..\..",
     [switch]$final,
@@ -38,7 +38,7 @@ if ($help -eq $true) {
     Write-Host "Version: 1.0"
     Write-Host "Require: SumatraPDF, LuaLaTeX"
     Write-Host ""
-    Write-Host "Usage: compile <opt. params> [OUTPUT_NAME]"
+    Write-Host "Usage: compile <opt. params> [-f OUTPUT_NAME]"
     Write-Host ""
     Write-Host "Required parameters:"
     Write-Host "    -f        Name of output file (without .pdf)"
@@ -49,10 +49,15 @@ if ($help -eq $true) {
     Write-Host "    -o        Path where to save the result."
     Write-Host "    -final    Compile presentation three times."
     Write-Host "    -help     Show this help."
+    exit
 }
-else {
-    Compile
+
+if ($f.Length -eq 0) {
+    Write-Host "Required parameter -f is missing." 
+    exit 
 }
+
+Compile
 
 
 
