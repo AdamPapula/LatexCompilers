@@ -1,5 +1,5 @@
 # Author: Adam Papula
-# Date: 2023-27-01
+# Date: 2023-02-01
 # Version: 1.0
 # Beamer presentation compiler
 #
@@ -46,7 +46,7 @@ if ($help -eq $true) {
     Write-Host "Optional parameters:"
     Write-Host "    -s        Path to source file (commonly .tex file). (default: main.tex)"
     Write-Host "    -p        Path where to save the result. (default: ..\..)"
-    Write-Host "    -o        Path where to save the result."
+    Write-Host "    -o        Open Sumatra after compilation."
     Write-Host "    -final    Compile presentation three times."
     Write-Host "    -help     Show this help."
     exit
